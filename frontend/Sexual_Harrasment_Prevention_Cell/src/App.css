@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.header {
+  height: 200px;
+  color: aqua;
+}
+.home{
+  height: 75vh;
+}
+.footer {
+  height: 200px;
+  margin-top: 2em;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
