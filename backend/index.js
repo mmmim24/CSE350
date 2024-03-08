@@ -4,15 +4,19 @@ const express = require("express")
 const mongoose = require("mongoose")
 const session = require('express-session');
 const jwt = require('jsonwebtoken')
+let store = {}
 const StudentModel = require("./models/student")
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: "*",
+    credentials: true
+}))
 app.use(session({
     secret : 'qwerty',
-    resave: false,
-    saveUninitialized: true,
+    resave: true,
+    saveUninitialized: false,
     cookie:{
         secure: false,
         maxAge: 3000*24*60*60
@@ -20,32 +24,39 @@ app.use(session({
 }))
 //database connection
 mongoose.connect("mongodb://127.0.0.1:27017/shpc")
-//database connection
-app.post('/',(req,res)=>{
-    // console.log(req.session);
-    if(req.session.email){
-        return res.json({
-            valid:true,
-            user:req.session.email,
-            role:req.session.role,
-            id:req.session.id
+
+
+app.post('/dashboard',(req,res)=>{
+    if(store){
+        res.json({
+            valid:store.valid,
+            name:store.name,
+            user:store.email,
+            role:store.role,
+            id:store.id
         })
     }
-    else return res.json({valid:false});
+    else 
+        return res.json({
+            valid:false
+        });
 })
+
 app.post('/login', (req,res)=>{
     const {email,password} = req.body;
     StudentModel.findOne({email:email})
     .then(user => {
         if(user) {
             if(password===user.password){
-                req.session.email = user.email;
-                req.session.role = user.role;
-                req.session.id = user.id;
-                req.session.name = user.name;
-                req.session.save();
+                store.valid = true;
+                store.email = user.email;
+                store.role = user.role;
+                store.id = user.id;
+                store.name = user.name;
+                // store.save();
                 console.log("hoise")
-                return res.json("Success")
+                // console.log(store)
+                return res.json(store);
             }
             else{
                 console.log("vul password")
@@ -64,7 +75,11 @@ app.post('/logout',(req,res)=>{
         if (err) {
           console.error('Error destroying session:', err);
         }
-        res.redirect('/login');
+        else{
+            store={};
+            res.json('Logged out')
+            console.log('logged out')
+        }
     });
 })
 

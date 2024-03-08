@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
@@ -12,9 +12,8 @@ function Login() {
         if(email&&password){
             axios.post('http://localhost:3333/login',{email,password})
                 .then(res=>{
-                    console.log(res);
-                    if(res.data==="Success"){
-                        navigate('/');
+                    if(res.data.valid===true){
+                        navigate('/dashboard');
                         window.location.reload();
                     }else{
                         alert('Invalid username and password');
@@ -25,19 +24,9 @@ function Login() {
         } 
     }
 
-    React.useEffect(()=>{
-        axios.post('http://localhost:3333')
-          .then(res=>{
-            if(res.data.valid){
-              console.log(res.data);
-              return;
-            }
-          })
-          .catch(err=>console.log(err));
-        },[]);
-
   return (
     <React.Fragment>
+        <Link className='text-3xl bg-yellow-500 hover:bg-orange-500 text-black hover:text-black font-bold py-3 px-5 rounded-xl' to='/'>Back to Home</Link>
         <div className='m-5 p-5'>
             <div >
                 <h3 className='text-[40px] m-5 p-5'>Log In</h3>
