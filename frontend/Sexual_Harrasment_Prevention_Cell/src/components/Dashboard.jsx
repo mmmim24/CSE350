@@ -31,8 +31,8 @@ React.useEffect(()=>{
     },[]);
   return (
     <React.Fragment>
-        <div className="dashboard">
-          <h1>Welcome to Dashboard <b>{user.name}</b></h1>
+        <div className="dashboard h-[65vh] flex">
+          <h1 className='self-center'>Welcome <b>{user.name}</b></h1>
           <div>
             {user.valid&&<button onClick={handleLogout} className='text-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' type='submit'>Logout</button>}
           </div>
