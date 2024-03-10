@@ -2,15 +2,17 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  display: grid;
+  place-items: center;
   text-align: center;
 }
 
 .header {
   height: 200px;
-  color: aqua;
+  color: gray;
 }
 .home{
-  height: 75vh;
+  height: 25vh;
 }
 .footer {
   height: 200px;
