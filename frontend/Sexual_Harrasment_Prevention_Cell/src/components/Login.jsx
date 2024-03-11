@@ -5,8 +5,19 @@ import axios from 'axios';
 function Login() {
     const navigate = useNavigate();
     const [email,setEmail] = React.useState();
+    const [user,setUser] = React.useState({});
     const [password,setPassword] = React.useState();
-
+    React.useEffect(()=>{
+        axios.post('http://localhost:3333/dashboard')
+        .then(res=>{
+                if(res.data.valid===true){
+                    setUser(res.data);
+                    navigate('/dashboard');
+                    return;
+                }
+            })
+            .catch(err=>console.log(err));
+    },[]);
     const handleSubmit = (e) =>{
         e.preventDefault();
         if(email&&password){

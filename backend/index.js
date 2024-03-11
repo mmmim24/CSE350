@@ -4,7 +4,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const session = require('express-session');
 const jwt = require('jsonwebtoken')
-let store = {}
+let store = {valid:false}
 const StudentModel = require("./models/student")
 
 const app = express()
@@ -36,10 +36,12 @@ app.post('/dashboard',(req,res)=>{
             id:store.id
         })
     }
-    else 
-        return res.json({
-            valid:false
+    else{
+        store.valid = false;
+        res.json({
+            valid:store.valid
         });
+    }
 })
 
 app.post('/login', (req,res)=>{
@@ -76,7 +78,7 @@ app.post('/logout',(req,res)=>{
           console.error('Error destroying session:', err);
         }
         else{
-            store={};
+            store={valid:false};
             res.json('Logged out')
             console.log('logged out')
         }
