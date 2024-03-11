@@ -35,7 +35,7 @@ router.post('/login', (req,res)=>{
     UserModel.findOne({email:email})
     .then(user => {
         if(user) {
-            if(password===user.password){
+            if(bcrypt.compareSync(password, user.password)){
                 store.valid = true;
                 store.email = user.email;
                 store.role = user.role;
@@ -80,12 +80,13 @@ router.post('/register', (req,res)=>{
             res.json("Email already exists");
         }
         else{
+            const hash = bcrypt.hashSync(password, 13);
             const newStudent = new UserModel({
                 role,
                 id,
                 name,
                 email,
-                password
+                password:hash
             })
             newStudent.save()
             .then(()=>{
