@@ -6,7 +6,7 @@ const Header = () => {
   const [user,setUser] = React.useState({});
   const navigate = useNavigate();
   React.useEffect(()=>{
-    axios.post('http://localhost:3333/dashboard')
+    axios.post('http://localhost:3333/user/dashboard')
         .then(res=>{
             if(res.data.valid===true){
                 setUser(res.data);
@@ -21,7 +21,7 @@ const Header = () => {
         .catch(err=>console.log(err));
     },[]);
     const handleLogout = () =>{
-      axios.post('http://localhost:3333/logout')
+      axios.post('http://localhost:3333/user/logout')
       .then(res=>{
           console.log('Logged out');
           // navigate('/');

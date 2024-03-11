@@ -13,7 +13,7 @@ const Dashboard = () => {
         } 
     }
     React.useEffect(()=>{
-        axios.post('http://localhost:3333/dashboard')
+        axios.post('http://localhost:3333/user/dashboard')
             .then(res=>{
                 if(res.data.valid===true){
                     setUser(res.data);

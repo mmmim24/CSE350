@@ -8,7 +8,7 @@ function Login() {
     const [user,setUser] = React.useState({});
     const [password,setPassword] = React.useState();
     React.useEffect(()=>{
-        axios.post('http://localhost:3333/dashboard')
+        axios.post('http://localhost:3333/user/dashboard')
         .then(res=>{
                 if(res.data.valid===true){
                     setUser(res.data);
@@ -21,7 +21,7 @@ function Login() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         if(email&&password){
-            axios.post('http://localhost:3333/login',{email,password})
+            axios.post('http://localhost:3333/user/login',{email,password})
                 .then(res=>{
                     if(res.data.valid===true){
                         navigate('/dashboard');
