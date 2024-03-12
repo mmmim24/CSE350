@@ -11,11 +11,11 @@ const Header = () => {
             if(res.data.valid===true){
                 setUser(res.data);
                 // console.log('Welcome to Dashboard');
-                return;
+                // return;
             }
             else{
                 // console.log('You are not logged in');
-                navigate('/');
+                // navigate('/');
             }
         })
         .catch(err=>console.log(err));
@@ -34,9 +34,10 @@ const Header = () => {
         <div className="flex gap-20 align-center mt-[32px] mb-[64px]">
             <h1 className='mt-5'>Sexual Harrasment Prevention Cell</h1>
             {
-              (user.valid===true)
-                ? <Link onClick={handleLogout} className='text-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 my-6 rounded-xl' to='/'>Logout</Link>
-                : <Link className='text-xl bg-yellow-500 hover:bg-orange-500 text-black hover:text-black font-bold py-3 px-5 my-6 rounded-xl' to='/login'>Login </Link>
+              user.valid&&<Link onClick={handleLogout} className='text-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 my-6 rounded-xl' to='/'>Logout</Link>
+            }
+            {
+              !user.valid&&<Link className='text-xl bg-yellow-500 hover:bg-orange-500 text-black hover:text-black font-bold py-3 px-5 my-6 rounded-xl' to='/login'>Login </Link>
             }
         </div>
     </React.Fragment>
