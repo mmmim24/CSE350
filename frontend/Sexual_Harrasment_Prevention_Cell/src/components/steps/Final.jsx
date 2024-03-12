@@ -1,4 +1,7 @@
+import { useStepperContext } from "../../contexts/StepperContext";
 export default function Final() {
+  const {userData, setUserData} = useStepperContext();
+  console.log(userData)
     return (
       <div className="container md:mt-10">
         <div className="flex flex-col items-center">
@@ -24,10 +27,10 @@ export default function Final() {
           </div>
   
           <div className="mt-3 text-xl font-semibold uppercase text-green-500">
-            Congratulations!
+            appreciation for Being brave !
           </div>
           <div className="text-lg font-semibold text-gray-500">
-            Your Account has been created.
+            Your Complaint has been filed.
           </div>
           <a className="mt-10" href="/dashboard">
             <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">

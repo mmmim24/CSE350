@@ -12,10 +12,10 @@ function ComplaintForm() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const steps = [
-    "Account Information",
-    "Personal Details",
-    "Payment",
-    "Complete",
+    "Personal Information",
+    "Do you know the accused?",
+    "Details of the Incident",
+    "Submit Complaint",
   ];
 
   const displayStep = (step) => {
@@ -44,7 +44,7 @@ function ComplaintForm() {
     <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
       {/* Stepper */}
       <div className="horizontal container mt-5 ">
-        <Stepper steps={steps} currentStep={currentStep} />
+        <Stepper steps={steps} currentStep={currentStep}   />
 
         <div className="my-10 p-10 ">
           <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>
