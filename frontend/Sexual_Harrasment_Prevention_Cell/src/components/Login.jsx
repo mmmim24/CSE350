@@ -15,6 +15,9 @@ function Login() {
                     navigate('/dashboard');
                     return;
                 }
+                // else{
+                //     navigate('/');
+                // }
             })
             .catch(err=>console.log(err));
     },[]);
