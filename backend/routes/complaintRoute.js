@@ -39,4 +39,32 @@ router.post('/view',async (req,res)=>{
     })
 })
 
+router.post('/view/:id',async (req,res)=>{
+    ComplaintModel.findOne({ID:req.params.id})
+    .then(complaint => {
+        if(complaint) {
+            console.log("exists")
+            res.json(complaint)
+        }
+        else{
+            console.log("no complaint")
+            res.json("no record for this id")
+        }
+    })
+})
+
+router.get('/getAll',async (req,res)=>{
+    ComplaintModel.find()
+    .then(complaints => {
+        if(complaints) {
+            console.log("exists")
+            res.json(complaints)
+        }
+        else{
+            console.log("no complaint")
+            res.json("no record")
+        }
+    })
+})
+
 module.exports = router;

@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import {useNavigate,Link} from 'react-router-dom';
+import ViewComplaints from './ViewComplaints';
 
 const Dashboard = () => {
     const [user,setUser] = React.useState({});
@@ -34,7 +35,7 @@ const Dashboard = () => {
           <div className='m-5 p-5 '>
             {
               (user.role==="admin")
-                ? <h1>admin</h1>
+                ? <ViewComplaints />
                 : <div>
                     <div className='mt-[32px]'>
                         <h1 className='text-[32px]'>Track your application</h1>
