@@ -2,8 +2,7 @@ const mongoose =  require('mongoose')
 
 const complaint =  new mongoose.Schema({
     date:{
-        type:Date,
-        default:Date.now
+        type:String 
     },
     ID:{
         type:String,
@@ -12,7 +11,6 @@ const complaint =  new mongoose.Schema({
     status:{
         type:String,
         enum: ["In Progress", "Processing", "Resolved"],
-        default: "In Progress",
         required:true
     },
     fullName :String,

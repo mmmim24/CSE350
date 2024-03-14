@@ -6,7 +6,7 @@ const ComplaintModel = require('../models/Complaint');
 router.post('/add',async (req,res)=>{
     const {fullName,contact,known,info,incident} = req.body;
     const complaint = new ComplaintModel({
-        date:new Date(),
+        date:new Date().toLocaleString(),
         ID : uuidv4(),
         status: "In Progress",
         fullName:fullName,
