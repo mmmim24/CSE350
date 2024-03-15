@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import AddNote from './AddNote';
+import { useNavigate } from 'react-router-dom';
 
 const ComplaintDetails = () => {
   const complaintID = window.location.pathname.split('/').pop();
+  const [user,setUser] = React.useState({});
+  const navigate = useNavigate();
   const [complaintDetails, setComplaintDetails] = React.useState({});
   const [selectedComplaintID, setSelectedComplaintID] = React.useState(null);
   const addNote = (ID) => {
@@ -14,6 +17,20 @@ const ComplaintDetails = () => {
     setSelectedComplaintID(null);
     console.log('Close a note');
   };
+  React.useEffect(()=>{
+    axios.post('http://localhost:3333/user/dashboard')
+        .then(res=>{
+            if(res.data.role==='admin'){
+                setUser(res.data);
+                return;
+            }
+            else{
+                console.log('You are not admin');
+                navigate('/');
+            }
+        })
+        .catch(err=>console.log(err));
+  },[]);
   React.useEffect(() => {
     axios.post(`http://localhost:3333/complaint/view/${complaintID}`)
       .then(res => {

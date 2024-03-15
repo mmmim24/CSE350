@@ -3,6 +3,9 @@ import axios from 'axios';
 
 const AddNote = ({ complaintID, onClose }) => {
     const [note, setNote] = React.useState(null);
+    const saveNote=()=>{
+        console.log('Note saved');
+    }
     React.useEffect(() => {
         axios.post(`http://localhost:3333/complaint/view/${complaintID}`)
             .then(res => {
@@ -26,7 +29,10 @@ const AddNote = ({ complaintID, onClose }) => {
                             type="fixed" 
                             className="my-3 p-2 px-2 resize-none h-[200px] w-full  rounded-xl bg-slate-200"
                             placeholder="Note" />
-                        <button className='block bg-indigo-700 hover:bg-slate-100 text-slate-100 hover:text-indigo-700' onClick>Add a note</button>
+                        <button 
+                            className='block bg-indigo-700 hover:bg-slate-100 text-slate-100 hover:text-indigo-700'
+                            onClick={(e)=>saveNote()}
+                        >Add a note</button>
                         <button className="my-3 bg-red-500" onClick={onClose}>Close</button>
                     </div>
                 ) : (
