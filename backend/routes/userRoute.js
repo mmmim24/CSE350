@@ -7,22 +7,13 @@ let store = {valid:false};
 
 
 router.post('/dashboard',async (req,res)=>{
-    console.log('router dashboard')
     try{
         if(store){
-            res.json({
-                valid:store.valid,
-                name:store.name,
-                user:store.email,
-                role:store.role,
-                id:store.id
-            })
+            res.json(store);
         }
         else{
             store.valid = false;
-            res.json({
-                valid:store.valid
-            });
+            res.json(store);
         }
     }
     catch(err){
@@ -42,17 +33,17 @@ router.post('/login', (req,res)=>{
                 store.id = user.id;
                 store.name = user.name;
                 // store.save();
-                console.log("hoise")
+                // console.log("hoise")
                 // console.log(store)
                 return res.json(store);
             }
             else{
-                console.log("vul password")
+                // console.log("vul password")
                 res.json("The password is incorrect")
             }
         }
         else{
-            console.log("user nai")
+            // console.log("user nai")
             res.json("email is not registered");
         }
     })
@@ -65,8 +56,8 @@ router.post('/logout',(req,res)=>{
         }
         else{
             store={valid:false};
-            res.json('Logged out')
             console.log('logged out')
+            res.json('Logged out')
         }
     });
 })
@@ -76,7 +67,7 @@ router.post('/register', (req,res)=>{
     UserModel.findOne({email:email})
     .then(user => {
         if(user) {
-            console.log("duplicate");
+            // console.log("duplicate");
             res.json("Email already exists");
         }
         else{
@@ -90,7 +81,7 @@ router.post('/register', (req,res)=>{
             })
             newStudent.save()
             .then(()=>{
-                console.log("registered")
+                // console.log("registered")
                 res.json("Success")
             })
             .catch(err=>console.log(err))

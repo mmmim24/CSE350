@@ -25,11 +25,8 @@ function ComplaintForm() {
         .then(res=>{
             if(res.data.valid===true){
                 setUser(res.data);
-                console.log('Welcome to Dashboard');
-                return;
             }
             else{
-                console.log('You are not logged in');
                 navigate('/');
             }
         })

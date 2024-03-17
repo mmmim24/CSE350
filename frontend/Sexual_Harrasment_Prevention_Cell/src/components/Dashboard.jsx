@@ -5,12 +5,24 @@ import ViewComplaints from './ViewComplaints';
 
 const Dashboard = () => {
     const [user,setUser] = React.useState({});
-    const [ID,setID] = React.useState('');
+    const [complaint,setComplaint] = React.useState({});
+    const [complaintID,setComplaintID] = React.useState('');
     const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(ID){
-            console.log(ID);
+        if(complaintID){
+            axios.post(`http://localhost:3333/complaint/view/${complaintID}`)
+                .then(res=>{
+                    if(res.data!=="no complaint"){
+                        setComplaint(res.data);
+                        // navigate(`/complaint/${complaintID}`);
+                    }
+                    else{
+                        console.log('No record found');
+                    }
+                    console.log(complaint.status);
+                })
+                .catch(err=>console.log(err));
         } 
     }
     React.useEffect(()=>{
@@ -18,11 +30,8 @@ const Dashboard = () => {
             .then(res=>{
                 if(res.data.valid===true){
                     setUser(res.data);
-                    console.log('Welcome to Dashboard');
-                    return;
                 }
                 else{
-                    console.log('You are not logged in');
                     navigate('/');
                 }
             })
@@ -34,20 +43,29 @@ const Dashboard = () => {
           <h1 className='text-[40px]'>Welcome <b>{user.name}</b></h1>
           <div className='m-5 p-5 '>
             {
-              (user.role==="admin")
+              (user.valid&&user.role==="admin")
                 ? <ViewComplaints />
                 : <div>
                     <div className='mt-[32px]'>
                         <h1 className='text-[32px]'>Track your application</h1>
                         <form action='post' onSubmit={handleSubmit}>
-                            <div className='m-[32px]'>
-                                <label className='p-3' htmlFor='ComplaintID'>ComplaintID</label>
-                                <input  className='px-2 rounded-md border-2 border-gray-400 bg-gray-200'
-                                        name='ComplaintID' 
-                                        type='ComplaintID' 
-                                        placeholder='Enter ComplaintID' 
-                                        onChange={(e)=>{setID(e.target.value)}} 
-                                        required/>
+                            <div className='m-[32px] mb-[0px]'>
+                                <label className='p-3 text-[20px]' htmlFor='ComplaintID'>ComplaintID</label>
+                                <input  
+                                    className='px-2 rounded-md border-2 border-gray-400 bg-gray-200'
+                                    name='ComplaintID' 
+                                    type='ComplaintID' 
+                                    placeholder='Enter ComplaintID' 
+                                    onChange={(e)=>{setComplaintID(e.target.value)}}
+                                    required
+                                />
+                                {
+                                    complaintID===''
+                                    ? <div className='mt-3 h-7'></div>
+                                    :(complaint.status!==undefined) 
+                                    ? <div className='mt-3 h-7'>Status: <h1 className='text-[20px] inline text-orange-500'>{complaint.status}</h1></div>
+                                    : <div className='mt-3 h-7'>Please Enter a valid ID</div>
+                                }
                             </div>
                             <button className='text-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 my-6 rounded-xl' type='submit'>Track</button>
                         </form>
