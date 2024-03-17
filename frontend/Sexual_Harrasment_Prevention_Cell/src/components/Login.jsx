@@ -40,8 +40,7 @@ function Login() {
 
   return (
     <React.Fragment>
-        <Link className='text-3xl bg-yellow-500 mt-10 hover:bg-orange-500 text-black hover:text-black font-bold py-3 px-5 rounded-xl' to='/'>Back to Home</Link>
-        <div className='m-5 p-5 h-[50vh]'>
+        <div className='m-5 p-5 h-[60vh]'>
             <div >
                 <h3 className='text-[40px] m-5 p-5'>Log In</h3>
 

@@ -17,7 +17,12 @@ const complaint =  new mongoose.Schema({
     contact:String,
     known:String,
     info:String,
-    incident:String
+    incident:String,
+    notes:{
+        exist:Boolean,
+        date:[String],
+        note:[String]
+    }
 })
 
 module.exports = mongoose.model("complaints",complaint);

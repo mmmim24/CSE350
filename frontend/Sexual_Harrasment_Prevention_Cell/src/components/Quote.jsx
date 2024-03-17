@@ -8,7 +8,7 @@ const Quote = () => {
     ]
   return (
     <React.Fragment>
-        <div className='w-auto my-[64px] '>
+        <div className='px-[256px] w-auto my-[64px] '>
             <div className="grid grid-cols-3 items-center justify-center">
                 <div className='p-7'>
                     <p className='text-xl font-semibold'>Dr. Sabina Islam</p>

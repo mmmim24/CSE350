@@ -9,6 +9,7 @@ import ComplaintForm from './components/ComplaintForm'
 import ComplaintDetails from './components/ComplaintDetails'
 import Footer from './components/Footer'
 import Error from './components/Error'
+import Profile from './components/Profile'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
          {/* multi-step form */}
         <Route path="/complaintform" element={<ComplaintForm />} />  
         <Route path="/complaint/:id" element={<ComplaintDetails />} />

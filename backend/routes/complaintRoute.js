@@ -13,7 +13,10 @@ router.post('/add',async (req,res)=>{
         contact:contact,
         known:known,
         info:info,
-        incident:incident
+        incident:incident,
+        notes : {
+            exist: false
+        }
     });
     // console.log(complaint)
     try{
@@ -25,15 +28,35 @@ router.post('/add',async (req,res)=>{
     }
 })
 
+router.put('/update/:id',async (req,res)=>{
+    const {status,note} = req.body;
+    ComplaintModel.findOne({ID:req.params.id})
+    .then(complaint => {
+        if(complaint) {
+            complaint.status = status;
+            complaint.notes.exist = true;
+            complaint.notes.date.push(new Date().toLocaleString());
+            complaint.notes.note.push(note);
+            complaint.save()
+            .then(() => res.json("Updated"))
+            .catch(err => res.json(err));
+        }
+        else{
+            res.json("no record for this id")
+        }
+    })
+    .catch(err => res.json(err));
+})
+
 router.post('/view',async (req,res)=>{
     ComplaintModel.findOne({ID:req.body.ID})
     .then(complaint => {
         if(complaint) {
-            console.log("exists")
+            // console.log("exists")
             res.json(complaint)
         }
         else{
-            console.log("no complaint")
+            // console.log("no complaint")
             res.json("no record")
         }
     })
@@ -43,11 +66,11 @@ router.post('/view/:id',async (req,res)=>{
     ComplaintModel.findOne({ID:req.params.id})
     .then(complaint => {
         if(complaint) {
-            console.log("exists")
+            // console.log("exists")
             res.json(complaint)
         }
         else{
-            console.log("no complaint")
+            // console.log("no complaint")
             res.json("no record for this id")
         }
     })
@@ -57,11 +80,11 @@ router.get('/getAll',async (req,res)=>{
     ComplaintModel.find()
     .then(complaints => {
         if(complaints) {
-            console.log("exists")
+            // console.log("exists")
             res.json(complaints)
         }
         else{
-            console.log("no complaint")
+            // console.log("no complaint")
             res.json("no record")
         }
     })

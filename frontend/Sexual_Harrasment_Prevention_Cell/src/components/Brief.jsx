@@ -3,7 +3,7 @@ import React from 'react'
 const Brief = () => {
   return (
     <React.Fragment>
-        <div className='text-justify my-[64px]'>
+        <div className='px-[512px] text-justify my-[64px]'>
             <div className='text-3xl font-bold text-center my-10'>
                 What we do
             </div>
