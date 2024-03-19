@@ -3,6 +3,10 @@ const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const ComplaintModel = require('../models/Complaint');
 
+router.get('/',(req,res)=>{
+    res.send("Complaint Route");
+})
+
 router.post('/add',async (req,res)=>{
     const {fullName,contact,known,info,incident} = req.body;
     const complaint = new ComplaintModel({

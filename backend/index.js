@@ -2,9 +2,12 @@ const cors = require("cors")
 const express = require("express")
 const mongoose = require("mongoose")
 const session = require('express-session');
-
+require('dotenv').config();
 const userRoute = require('./routes/userRoute');
 const complaintRoute = require('./routes/complaintRoute');
+
+const PORT = process.env.PORT || 3333
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/shpc'
 
 const app = express()
 
@@ -26,12 +29,22 @@ app.use(session({
 }))
 
 //database connection
-mongoose.connect("mongodb://127.0.0.1:27017/shpc")
+mongoose.connect(MONGODB_URI)
+.then(()=>{
+    console.log("Database connected...");
+})
+.catch((err)=>{
+    console.log(err);
+})
+
+app.get('/',(req,res)=>{
+    res.send("SHPPC API");
+})
 
 app.use('/user', userRoute);
 
 app.use('/complaint', complaintRoute);
 
-app.listen(3333, ()=>{
+app.listen(PORT, ()=>{
     console.log("server is running...");
 })

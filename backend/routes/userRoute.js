@@ -5,6 +5,9 @@ const jwt = require('jsonwebtoken');
 const UserModel = require('../models/User');
 let store = {valid:false};
 
+router.get('/',(req,res)=>{
+    res.send("user route");
+})
 
 router.post('/dashboard',async (req,res)=>{
     try{
