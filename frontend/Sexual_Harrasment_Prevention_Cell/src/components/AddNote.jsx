@@ -8,7 +8,7 @@ const AddNote = ({ complaintID, onClose }) => {
     const saveNote=(e)=>{
         e.preventDefault();
         if(note){
-            axios.put(`http://localhost:3333/complaint/update/${complaintID}`, {
+            axios.put(`https://cse350-backend-production.up.railway.app/complaint/update/${complaintID}`, {
                 status:status,
                 note: note
             })
@@ -22,7 +22,7 @@ const AddNote = ({ complaintID, onClose }) => {
         }
     }
     React.useEffect(() => {
-        axios.post(`http://localhost:3333/complaint/view/${complaintID}`)
+        axios.post(`https://cse350-backend-production.up.railway.app/complaint/view/${complaintID}`)
             .then(res => {
                 setComplaint(res.data);
                 setStatus(res.data.status);

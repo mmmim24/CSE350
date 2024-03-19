@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const DropMenu = ({user}) => {
     const handleLogout = () =>{
-        axios.post('http://localhost:3333/user/logout')
+        axios.post('https://cse350-backend-production.up.railway.app/user/logout')
             .then(res=>{
                 console.log('Logged out');
                 window.location.reload();

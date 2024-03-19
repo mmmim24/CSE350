@@ -11,7 +11,7 @@ const Dashboard = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         if(complaintID){
-            axios.post(`http://localhost:3333/complaint/view/${complaintID}`)
+            axios.post(`https://cse350-backend-production.up.railway.app/complaint/view/${complaintID}`)
                 .then(res=>{
                     if(res.data!=="no complaint"){
                         setComplaint(res.data);
@@ -26,7 +26,7 @@ const Dashboard = () => {
         } 
     }
     React.useEffect(()=>{
-        axios.post('http://localhost:3333/user/dashboard')
+        axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
             .then(res=>{
                 if(res.data.valid===true){
                     setUser(res.data);

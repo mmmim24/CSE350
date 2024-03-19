@@ -9,7 +9,7 @@ export default function Final() {
   const handleSubmit = (e) =>{
     e.preventDefault();
     if(userData){
-        axios.post('http://localhost:3333/complaint/add',userData)
+        axios.post('https://cse350-backend-production.up.railway.app/complaint/add',userData)
             .then(res=>{
                 navigate('/dashboard');
               } 

@@ -6,7 +6,7 @@ const Profile = () => {
     const [user,setUser] = React.useState({});
     const navigate = useNavigate();
     React.useEffect(()=>{
-        axios.post('http://localhost:3333/user/dashboard')
+        axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
             .then(res=>{
                 if(res.data.valid===true){
                     setUser(res.data);

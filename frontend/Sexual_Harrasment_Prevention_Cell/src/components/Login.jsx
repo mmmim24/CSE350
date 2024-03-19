@@ -8,7 +8,7 @@ function Login() {
     const [user,setUser] = React.useState({});
     const [password,setPassword] = React.useState();
     React.useEffect(()=>{
-        axios.post('http://localhost:3333/user/dashboard')
+        axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
         .then(res=>{
                 if(res.data.valid===true){
                     setUser(res.data);
@@ -24,7 +24,7 @@ function Login() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         if(email&&password){
-            axios.post('http://localhost:3333/user/login',{email,password})
+            axios.post('https://cse350-backend-production.up.railway.app/user/login',{email,password})
                 .then(res=>{
                     if(res.data.valid===true){
                         navigate('/dashboard');

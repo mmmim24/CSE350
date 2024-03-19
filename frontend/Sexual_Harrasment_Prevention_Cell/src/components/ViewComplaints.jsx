@@ -10,7 +10,7 @@ const ViewComplaints = () => {
         navigate(`/complaint/${ID}`);
     }    
     React.useEffect(()=>{
-        axios.get('http://localhost:3333/complaint/getAll')
+        axios.get('https://cse350-backend-production.up.railway.app/complaint/getAll')
             .then(res=>{
                 // console.log(res.data);
                 setComplaints(res.data);

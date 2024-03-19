@@ -19,7 +19,7 @@ const ComplaintDetails = () => {
     window.location.reload();
   };
   React.useEffect(()=>{
-    axios.post('http://localhost:3333/user/dashboard')
+    axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
         .then(res=>{
             if(res.data.role==='admin'){
                 setUser(res.data);
@@ -32,7 +32,7 @@ const ComplaintDetails = () => {
         .catch(err=>console.log(err));
   },[]);
   React.useEffect(() => {
-    axios.post(`http://localhost:3333/complaint/view/${complaintID}`)
+    axios.post(`https://cse350-backend-production.up.railway.app/complaint/view/${complaintID}`)
       .then(res => {
         // console.log(res.data)
         setComplaint(res.data);
