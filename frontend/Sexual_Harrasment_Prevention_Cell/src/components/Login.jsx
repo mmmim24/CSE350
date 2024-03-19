@@ -27,7 +27,7 @@ function Login() {
             axios.post('https://cse350-backend-production.up.railway.app/user/login',{email,password})
                 .then(res=>{
                     if(res.data.valid===true){
-                        navigate('/dashboard');
+                        navigate('/');
                         window.location.reload();
                     }else{
                         alert('Invalid username and password');
