@@ -19,7 +19,7 @@ const Profile = () => {
     },[]);
   return (
     <React.Fragment>
-        <main className='flex flex-col gap-4 min-h-[60vh]'>
+        <main className='flex flex-col gap-4 min-h-[75vh]'>
             <h1 className='text-4xl'>Profile</h1>
             <div className='flex flex-col gap-4'>
                 <div className='flex gap-4'>
@@ -28,9 +28,7 @@ const Profile = () => {
                 </div>
                 <div className='flex gap-4'>
                     <h1 className='text-2xl'>Email:</h1>
-                    <h1 className='text-2xl'>
-                        <a href='mailto:mustaqmujahidmim@gmail.com'>{user.user}</a>
-                    </h1>
+                    <h1 className='text-2xl'>{user.email}</h1>
                 </div>
             </div>
         </main>

@@ -15,7 +15,10 @@ export default function Final() {
               } 
             )
             .catch(err=>console.log(err));
-    } 
+    }
+    else{
+      navigate('/dashboard')
+    }
 }
     return (
       <div className="container md:mt-10">
@@ -41,14 +44,14 @@ export default function Final() {
             </svg>
           </div>
   
-          <div className="mt-3 text-xl font-semibold uppercase text-indigo-500">
+          <div className="mt-3 text-xl font-semibold uppercase text-[#136F63]">
             appreciation for Being brave !
           </div>
           <div className="text-lg font-semibold text-gray-500">
             Your Complaint has been filed.
           </div>
           <a className="mt-10" href="/dashboard">
-            <button onClick={handleSubmit} className="h-10 px-5 bg-indigo-500 text-white transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
+            <button onClick={handleSubmit} className="p-3 bg-[#D70000] text-white transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-white hover:text-[#D70000] hover:border-[#D70000]">
               Close
             </button>
           </a>

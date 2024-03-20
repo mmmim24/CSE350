@@ -6,8 +6,8 @@ import Quote from './Quote';
 const Home = () => {
   return (
     <React.Fragment>
-        <Carousel/>
         <Brief/>
+        <Carousel/>
         <Quote/>
     </React.Fragment>
   )

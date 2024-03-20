@@ -3,8 +3,8 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
       <div className="container mt-4 mb-8 flex justify-around">
         <button
           onClick={() => handleClick()}
-          className={`cursor-pointer rounded-xl border-2 border-slate-300 bg-white py-2 px-4 font-semibold uppercase text-slate-400 transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white  ${
-            currentStep === 1 ? " cursor-not-allowed opacity-50 " : ""
+          className={`cursor-pointer rounded-xl bg-[#D70000] py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-white hover:border-[#D70000] hover:text-[#D70000]  ${
+            currentStep === 1 ? " cursor-not-allowed hover:bg-slate-500 hover:border-slate-500 " : ""
           }`}
         >
           Back
@@ -12,7 +12,7 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
   
         <button
           onClick={() => handleClick("next")}
-          className="cursor-pointer rounded-lg bg-indigo-500 py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white"
+          className="cursor-pointer rounded-lg bg-[#136F63] py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-white hover:text-[#136F63]"
         >
           {currentStep === steps.length - 1 ? "Confirm" : "Next"}
         </button>

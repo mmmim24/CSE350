@@ -39,7 +39,7 @@ const Dashboard = () => {
     },[]);
   return (
     <React.Fragment>
-        <div className="dashboard my-[32px]">
+        <div className="min-h-[70vh] my-[32px]">
           <h1 className='text-[40px]'>Welcome <b>{user.name}</b></h1>
           <div className='m-5 p-5 '>
             {
@@ -67,13 +67,13 @@ const Dashboard = () => {
                                     : <div className='mt-3 h-7'>Please Enter a valid ID</div>
                                 }
                             </div>
-                            <button className='text-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 my-6 rounded-xl' type='submit'>Track</button>
+                            <button className='p-3 bg-[#136F63] text-white hover:bg-white hover:text-[#136F63] text-xl py-2 px-4 rounded-lg' type='submit'>Track</button>
                         </form>
                     </div>
                     <div className='mt-[32px]'>
                         <h1 className='text-[32px]'>Submit a complaintform</h1>
                         <div className='mt-[32px]'>
-                            <Link className='text-xl bg-yellow-500 hover:bg-orange-500 text-black hover:text-black font-bold py-3 px-5 my-6 rounded-xl' to='/complaintform'>Submit</Link>
+                            <Link className='p-3 bg-[#D70000] text-white hover:bg-white hover:text-[#136F63] text-xl py-2 px-4 rounded-lg' to='/complaintform'>Submit</Link>
                         </div>
                     </div>
                 </div>
