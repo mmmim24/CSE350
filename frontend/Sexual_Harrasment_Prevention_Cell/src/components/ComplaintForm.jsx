@@ -55,12 +55,12 @@ function ComplaintForm() {
   };
 
   return (
-    <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
+    <div className="min-h-[70vh] my-[32px] py-[96px] mx-auto md:w-1/2">
       {/* Stepper */}
-      <div className="horizontal container mt-5 ">
+      <div className="horizontal container border-2 border-[#136F63] rounded-2xl p-5 shadow-xl min-h-[200px]">
         <Stepper steps={steps} currentStep={currentStep}   />
 
-        <div className="my-10 p-10 ">
+        <div className="p-[64px]">
           <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>
         </div>
       </div>

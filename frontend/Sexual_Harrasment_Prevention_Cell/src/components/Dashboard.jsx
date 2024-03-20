@@ -39,7 +39,7 @@ const Dashboard = () => {
     },[]);
   return (
     <React.Fragment>
-        <div className="min-h-[70vh] my-[32px]">
+        <div className="min-h-[70vh] my-[32px] py-[96px]">
           <h1 className='text-[40px]'>Welcome <b>{user.name}</b></h1>
           <div className='m-5 p-5 '>
             {

@@ -42,7 +42,7 @@ const ComplaintDetails = () => {
   }, [complaintID]);
   return (
     <React.Fragment>
-        <div className='min-h-[70vh] w-[700px]'>
+        <div className='min-h-[70vh] my-[32px] py-[32px] w-[900px]'>
             <h1 className='text-3xl font-bold py-[50px]'>Complaint Details</h1>
             <div key={complaint.ID} className='p-10 justify text-justify rounded-lg bg-white border-2 border-[#136F63] mx-auto my-auto w-auto'>
                 <p className='font-semibold'>Reported on : {complaint.date}</p>
@@ -54,7 +54,7 @@ const ComplaintDetails = () => {
                   <p>Info of Accused : {complaint.info}</p>
                 </div>
                 <p className='my-5 font-semibold'>Description : {complaint.incident}</p>
-                {
+                {/* {
                   (notes.exist)
                   ?<div className='font-semibold'> Notes:
                     <ul className='pl-10 list-disc'>
@@ -71,7 +71,7 @@ const ComplaintDetails = () => {
                     </ul>
                   </div>
                   :<p></p>
-                }
+                } */}
 
                 <button className='mt-[32px] bg-[#136F63] hover:bg-white text-slate-100 hover:text-[#136F63]' onClick={(e)=>addNote(complaint.ID)}>Add a note</button>
                 {selectedComplaintID && <AddNote complaintID={selectedComplaintID} onClose={closeNote} />}

@@ -19,7 +19,7 @@ const Profile = () => {
     },[]);
   return (
     <React.Fragment>
-        <main className='flex flex-col gap-4 min-h-[75vh]'>
+        <main className='flex flex-col gap-4 min-h-[70vh] my-[32px] py-[96px]'>
             <h1 className='text-4xl'>Profile</h1>
             <div className='flex flex-col gap-4'>
                 <div className='flex gap-4'>

@@ -40,7 +40,7 @@ function Login() {
 
   return (
     <React.Fragment>
-        <div className='m-5 p-5 h-[60vh]'>
+        <div className='min-h-[70vh] my-[32px] py-[96px]'>
             <div >
                 <h3 className='text-[40px] m-5 p-5'>Log In</h3>
 
