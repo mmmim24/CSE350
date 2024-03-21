@@ -54,7 +54,7 @@ const ComplaintDetails = () => {
                   <p>Info of Accused : {complaint.info}</p>
                 </div>
                 <p className='my-5 font-semibold'>Description : {complaint.incident}</p>
-                {/* {
+                {
                   (notes.exist)
                   ?<div className='font-semibold'> Notes:
                     <ul className='pl-10 list-disc'>
@@ -71,7 +71,7 @@ const ComplaintDetails = () => {
                     </ul>
                   </div>
                   :<p></p>
-                } */}
+                }
 
                 <button className='mt-[32px] bg-[#136F63] hover:bg-white text-slate-100 hover:text-[#136F63]' onClick={(e)=>addNote(complaint.ID)}>Add a note</button>
                 {selectedComplaintID && <AddNote complaintID={selectedComplaintID} onClose={closeNote} />}

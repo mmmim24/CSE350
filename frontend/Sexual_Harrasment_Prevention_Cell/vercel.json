@@ -1,0 +1,13 @@
+{
+    "rewrites":  [
+      {
+        "source": "/(.*)", 
+        "destination": "/"}
+    ],
+    "redirects": [
+      {
+        "source": "/view-source",
+        "destination": "https://github.com/mmmim24/CSE350"
+      }
+    ]
+}
