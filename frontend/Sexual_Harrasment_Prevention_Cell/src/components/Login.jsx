@@ -63,7 +63,7 @@ function Login() {
                                 onChange={(e)=>{setPassword(e.target.value)}}
                                 required/> 
                     </div>
-                    <button className='p-3 bg-[#136F63] text-white hover:bg-white hover:text-[#136F63] text-xl py-2 px-4 rounded-lg' type='submit'>Login</button>
+                    <button className='p-3 bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] text-xl py-2 px-4 rounded-lg' type='submit'>Login</button>
                 </form>
 
             </div>

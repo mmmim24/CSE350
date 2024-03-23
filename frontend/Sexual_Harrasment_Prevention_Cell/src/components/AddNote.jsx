@@ -51,11 +51,11 @@ const AddNote = ({ complaintID, onClose }) => {
                                 required
                                 />
                             <button 
-                                className='w-[96px] bg-indigo-700 hover:bg-slate-100 text-slate-100 hover:text-indigo-700'
+                                className='p-1 w-[96px] bg-[#136F63] hover:bg-[#FAFFF3] text-slate-100 hover:text-[#136F63] rounded-lg hover:border-[1px] hover:border-[#136F63]'
                                 type='submit'
                             >ADD</button>
                         </form>
-                        <button className="w-[96px] my-3 bg-red-500 hover:bg-slate-100 text-slate-100 hover:text-red-500 hover:border-red-500" onClick={onClose}>CLOSE</button>
+                        <button className="p-1 w-[96px] my-3 bg-red-500 hover:bg-[#FAFFF3] text-slate-100 hover:text-red-500 hover:border-red-500 rounded-lg hover:border-[1px]" onClick={onClose}>CLOSE</button>
                     </div>
                 ) : (
                 <p>Loading...</p>

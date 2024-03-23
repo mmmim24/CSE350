@@ -9,8 +9,8 @@ const Brief = () => {
             <div className='text-white text-left w-[50%] m-[64px] p-[64px] overflow-hidden'>
               <h1 className='text-4xl'>Lorem Ipsum</h1>
               <p className='my-[32px]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia magnam dolorum omnis autem. Saepe veritatis autem, minus ea totam quae. Dolore maiores modi dicta ipsam? Nam earum ea quibusdam soluta ipsa ab, vitae repellendus explicabo, corrupti sunt, aut sequi tempora nulla magni ullam fuga provident ducimus. Fugit optio est quas temporibus incidunt, perferendis commodi. Iusto, fugit. Minima quaerat inventore nihil aliquid aperiam qui totam officia, perferendis dolore, recusandae reprehenderit, excepturi modi. At quaerat sapiente odit impedit eos! Atque labore quod recusandae blanditiis rem soluta dolorum corrupti dolore dicta sapiente dolorem ea aut, quis illo porro dignissimos laudantium placeat sit itaque!</p>
-              <Link to='/dashboard' className='p-3 bg-[#D70000] text-white rounded-lg hover:bg-white hover:text-[#D70000] mr-[32px]'>File A Complaint</Link>
-              <Link to='/dashboard' className='p-3 bg-[#136F63] text-white rounded-lg hover:bg-white hover:text-[#136F63]'>Check Update</Link>
+              <Link to='/dashboard' className='p-3 bg-[#D70000] text-white rounded-lg hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#D70000] hover:text-[#D70000] mr-[32px]'>File A Complaint</Link>
+              <Link to='/dashboard' className='p-3 bg-[#136F63] text-white rounded-lg hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63]'>Check Update</Link>
             </div>
         </div>
         <div className='px-[20vw] text-justify my-[64px]'>

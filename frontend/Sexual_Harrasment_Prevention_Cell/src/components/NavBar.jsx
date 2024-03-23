@@ -23,14 +23,14 @@ const NavBar = () => {
     return (
         <React.Fragment>
             <ul className='flex lg:gap-4 sm:gap-1 md:gap-2 pl-[10%] place-items-center '>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-indigo-600 hover:bg-white sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/'>Home</Link></li>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-indigo-600 hover:bg-white sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/faq'>FAQ</Link></li>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-indigo-600 hover:bg-white sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/about'>About</Link></li>
+                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/'>Home</Link></li>
+                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/faq'>FAQ</Link></li>
+                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/about'>About</Link></li>
                 <li>
                     {
                         user.valid
                         ? <DropMenu user={user}/>
-                        : <Link className='bg-[#D70000] text-white hover:text-[#D70000] hover:border-red-[#D70000] mr-[32px] lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg hover:bg-white sm:hover:p-1 md:hover:p-2 lg:hover:p-3 border-[#D70000] rounded-lg' to='/login'>Login </Link>
+                        : <Link className='bg-[#D70000] text-white hover:text-[#D70000] hover:border-red-[#D70000] mr-[32px] lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg hover:bg-[#FAFFF3] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 border-[1px] border-[#D70000] rounded-lg' to='/login'>Login </Link>
                     }
                 </li>
             </ul>

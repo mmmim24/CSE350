@@ -51,7 +51,7 @@ export default function Final() {
             Your Complaint has been filed.
           </div>
           <a className="mt-10" href="/dashboard">
-            <button onClick={handleSubmit} className="p-3 bg-[#D70000] text-white transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-white hover:text-[#D70000] hover:border-[#D70000]">
+            <button onClick={handleSubmit} className="p-3 bg-[#D70000] text-white transition-colors duration-150 border rounded-lg focus:shadow-outline hover:bg-[#FAFFF3] hover:text-[#D70000] hover:border-[#D70000]">
               Close
             </button>
           </a>
