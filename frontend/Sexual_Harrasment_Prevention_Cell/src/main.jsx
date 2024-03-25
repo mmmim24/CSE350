@@ -7,7 +7,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.Fragment>
     <BrowserRouter>
-    <App />
+      <App />
     </BrowserRouter>
   </React.Fragment>,
 )

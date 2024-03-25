@@ -1,6 +1,6 @@
 import { useStepperContext } from "../../contexts/StepperContext";
 
-export default function Payment() {
+export default function Details() {
   const { userData, setUserData,submit } = useStepperContext();
 
   const handleChange = (e) => {

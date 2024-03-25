@@ -67,7 +67,7 @@ const Dashboard = () => {
                                     : <div className='mt-3 h-7'>Please Enter a valid ID</div>
                                 }
                             </div>
-                            <button className='bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] hover:py-[7px] text-xl py-1.5 px-3.5 rounded-lg' type='submit'>Track</button>
+                            <button className='bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] hover:py-[5px] text-xl py-1.5 px-3.5 rounded-lg' type='submit'>Track</button>
                         </form>
                     </div>
                     <div className='mt-[32px]'>

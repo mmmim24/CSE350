@@ -1,24 +1,38 @@
 import { useStepperContext } from "../../contexts/StepperContext";
+import BasicDocument from "../BasicDoc";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import React from "react";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+var submit = false;
 
 export default function Final() {
   const {userData, setUserData} = useStepperContext();
+  const [complaint,setComplaint] = React.useState({});
   const navigate = useNavigate();
-  console.log(userData)
-  const handleSubmit = (e) =>{
+  const Preview = (e) =>{
     e.preventDefault();
     if(userData){
+      if(!submit){
         axios.post('https://cse350-backend-production.up.railway.app/complaint/add',userData)
             .then(res=>{
-                navigate('/dashboard');
+                setComplaint(res.data);
+                submit = true;
               } 
-            )
-            .catch(err=>console.log(err));
+              )
+              .catch(err=>console.log(err));
+        }
+            // console.log(complaint);
+            // console.log(submit)
     }
     else{
       navigate('/dashboard')
     }
+  }
+  const closeView = (e) =>{
+    e.preventDefault();
+    navigate('/dashboard')
+    window.location.reload();
 }
     return (
       <div className="m-10">
@@ -48,13 +62,24 @@ export default function Final() {
             appreciation for Being brave !
           </div>
           <div className="text-lg font-semibold text-gray-500">
-            Your Complaint has been filed.
+            Your Complaint has been filed. <p>{complaint.ID}</p>
           </div>
-          <a className="mt-10" href="/dashboard">
-            <button onClick={handleSubmit} className="px-4 py-2 bg-[#D70000] text-white transition-colors duration-150 border rounded-lg focus:shadow-outline hover:bg-[#FAFFF3] hover:text-[#D70000] hover:border-[#D70000]">
+          <div>
+            <button onClick={Preview} className="px-4 py-2 bg-[#136F63] text-white border rounded-lg focus:shadow-outline hover:bg-[#FAFFF3] hover:text-[#136F63] hover:border-[#136F63] mr-9">
+              Preview
+            </button>
+            <button onClick={closeView} className="px-4 py-2 bg-[#D70000] text-white border rounded-lg focus:shadow-outline hover:bg-[#FAFFF3] hover:text-[#D70000] hover:border-[#D70000]">
               Close
             </button>
-          </a>
+            <div className="mt-[32px] border-1 rounded-xl">
+              {submit&&<BasicDocument complaint={complaint}/>}
+              {/* <PDFDownloadLink document={<BasicDocument complaint={complaint}/>} fileName={`${complaint.ID}.pdf`}>
+                {({ blob, url, loading, error }) =>
+                loading ? "Loading document..." : "Download now!"
+              }
+              </PDFDownloadLink> */}
+            </div>
+          </div>
         </div>
       </div>
     );

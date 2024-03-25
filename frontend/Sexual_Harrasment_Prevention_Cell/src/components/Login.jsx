@@ -30,7 +30,7 @@ function Login() {
                         navigate('/');
                         window.location.reload();
                     }else{
-                        alert('Invalid username and password');
+                        alert(res.data);
                     }
                 }
                 )
