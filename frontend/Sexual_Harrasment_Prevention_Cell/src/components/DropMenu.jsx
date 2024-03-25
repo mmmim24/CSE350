@@ -14,7 +14,7 @@ const DropMenu = ({user}) => {
   return (
     <React.Fragment>
         <div className="relative group">
-                <h1 className='p-4 text-xl text-[#D70000] hover:text-[#136F63] hover:border-x-[1px] hover:border-t-[1px] hover:border-[#136F63] w-[128px] hover:p-4 rounded-t-lg font-bold uppercase'> {user.role}</h1>
+                <h1 className='p-3 text-xl text-[#D70000] hover:text-[#136F63] hover:border-x-[1px] hover:border-t-[1px] hover:border-[#136F63] w-[128px] hover:p-[11px] rounded-t-lg font-bold uppercase'> {user.role}</h1>
                 <div className='absolute hidden group-hover:block bg-[#FAFFF3] p-2 rounded-b-lg shadow-md w-[128px] border-b-[1px] border-x-[1px] border-[#D70000]'>
                     <ul className='flex flex-col gap-2'>
                         <li><Link className='text-[#D70000] hover:text-[#136F63]' to='/profile'>Profile</Link></li>

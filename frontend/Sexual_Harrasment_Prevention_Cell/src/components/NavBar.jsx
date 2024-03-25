@@ -23,9 +23,9 @@ const NavBar = () => {
     return (
         <React.Fragment>
             <ul className='flex lg:gap-4 sm:gap-1 md:gap-2 pl-[10%] place-items-center '>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/'>Home</Link></li>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/faq'>FAQ</Link></li>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 rounded-lg' to='/about'>About</Link></li>
+                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px] rounded-lg' to='/'>Home</Link></li>
+                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px] rounded-lg' to='/faq'>FAQ</Link></li>
+                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px] rounded-lg' to='/about'>About</Link></li>
                 <li>
                     {
                         user.valid

@@ -32,7 +32,7 @@ const Dashboard = () => {
                     setUser(res.data);
                 }
                 else{
-                    navigate('/');
+                    navigate('/login');
                 }
             })
             .catch(err=>console.log(err));
@@ -67,13 +67,13 @@ const Dashboard = () => {
                                     : <div className='mt-3 h-7'>Please Enter a valid ID</div>
                                 }
                             </div>
-                            <button className='p-3 bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] text-xl py-2 px-4 rounded-lg' type='submit'>Track</button>
+                            <button className='bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] hover:py-[7px] text-xl py-1.5 px-3.5 rounded-lg' type='submit'>Track</button>
                         </form>
                     </div>
                     <div className='mt-[32px]'>
                         <h1 className='text-[32px]'>Submit a complaintform</h1>
                         <div className='mt-[32px]'>
-                            <Link className='p-3 bg-[#D70000] text-white hover:bg-[#FAFFF3] hover:border-[#D70000] hover:border-[1px] hover:text-[#D70000] text-xl py-2 px-4 rounded-lg' to='/complaintform'>Submit</Link>
+                            <Link className='bg-[#D70000] text-white hover:bg-[#FAFFF3] hover:border-[#D70000] hover:border-[1px] hover:text-[#D70000] hover:py-[7px] text-xl py-2 px-4 rounded-lg' to='/complaintform'>Submit</Link>
                         </div>
                     </div>
                 </div>

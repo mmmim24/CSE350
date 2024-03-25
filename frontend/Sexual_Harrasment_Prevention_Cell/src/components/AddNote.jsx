@@ -14,6 +14,9 @@ const AddNote = ({ complaintID, onClose }) => {
             })
             .then(res => {
                 alert(res.data);
+                setTimeout(() => {
+                    onClose();
+                }, 500);
             })
             .catch(err => console.log(err));
         }
@@ -51,11 +54,11 @@ const AddNote = ({ complaintID, onClose }) => {
                                 required
                                 />
                             <button 
-                                className='p-1 w-[96px] bg-[#136F63] hover:bg-[#FAFFF3] text-slate-100 hover:text-[#136F63] rounded-lg hover:border-[1px] hover:border-[#136F63]'
+                                className='p-1 w-[96px] bg-[#136F63] hover:bg-[#FAFFF3] text-slate-100 hover:text-[#136F63] rounded-lg hover:border-[1px] hover:p-[3px] hover:border-[#136F63]'
                                 type='submit'
                             >ADD</button>
                         </form>
-                        <button className="p-1 w-[96px] my-3 bg-red-500 hover:bg-[#FAFFF3] text-slate-100 hover:text-red-500 hover:border-red-500 rounded-lg hover:border-[1px]" onClick={onClose}>CLOSE</button>
+                        <button className="p-1 w-[96px] my-3 bg-red-500 hover:bg-[#FAFFF3] text-slate-100 hover:text-red-500 hover:border-red-500 rounded-lg hover:border-[1px] hover:p-[3px]" onClick={onClose}>CLOSE</button>
                     </div>
                 ) : (
                 <p>Loading...</p>

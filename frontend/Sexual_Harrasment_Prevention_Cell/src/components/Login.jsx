@@ -41,29 +41,30 @@ function Login() {
   return (
     <React.Fragment>
         <div className='min-h-[70vh] my-[32px] py-[96px]'>
-            <div >
-                <h3 className='text-[40px] m-5 p-5'>Log In</h3>
+            <div className='bg-[#92817A] bg-opacity-60 rounded-3xl p-[40px]'>
+                <h3 className='text-[40px]'>Log In</h3>
 
                 <form action='post' onSubmit={handleSubmit}>
-                    <div className='m-3 p-3'>
-                        <label className='p-3' htmlFor='email'>Email</label>
-                        <input  className='px-2 rounded-md border-2 border-gray-400 bg-gray-200'
+                    <div className='flex justify-between m-3 p-3'>
+                        <label className='py-1' htmlFor='email'>Email</label>
+                        <input  className=' text-center rounded-md bg-[#FBFFF6]'
                                 name='email' 
                                 type='email' 
                                 placeholder='Enter Email' 
                                 onChange={(e)=>{setEmail(e.target.value)}} 
                                 required/> 
                     </div>
-                    <div className='m-3 p-3'>
-                        <label className='p-3' htmlFor='password'>Password</label>
-                        <input  className='px-2 rounded-md border-2 border-gray-400 bg-gray-200'
+                    <div className='flex justify-between m-3 p-3'>
+                        <label className='py-1' htmlFor='password'>Password</label>
+                        <input  className=' text-center rounded-md bg-[#FBFFF6]'
                                 name='password' 
                                 type='password' 
                                 placeholder='Enter Password' 
                                 onChange={(e)=>{setPassword(e.target.value)}}
                                 required/> 
                     </div>
-                    <button className='p-3 bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] text-xl py-2 px-4 rounded-lg' type='submit'>Login</button>
+                    <button className='bg-[#136F63] text-white hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63] hover:py-[7px] text-xl py-2 px-4 rounded-lg' type='submit'>Login</button>
+                    <p className='text-[#D70000] mt-4'>Please Contact The Registrar Building if you have no account</p>
                 </form>
 
             </div>
