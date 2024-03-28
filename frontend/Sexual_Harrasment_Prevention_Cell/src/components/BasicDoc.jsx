@@ -25,11 +25,9 @@ import {
   // Create Document Component
   function BasicDocument({complaint}) {
     return (
-      <PDFViewer style={styles.viewer}>
+      <PDFViewer style={styles.viewer} className="border border-[#136F63] rounded-xl">
         {/* Start of the document*/}
-        Heading
         <Document>
-            Complaint
           {/*render a single page*/}
           <Page size="A4" style={styles.page}>
             <View style={styles.section}>
