@@ -18,6 +18,10 @@ const ComplaintDetails = () => {
     setSelectedComplaintID(null);
     window.location.reload();
   };
+  const addMeeting = (ID) => {
+    console.log('Schedule a Meeting');
+    navigate(`/complaint/${ID}/meeting`);
+  };
   React.useEffect(()=>{
     axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
         .then(res=>{
@@ -74,6 +78,7 @@ const ComplaintDetails = () => {
                 }
 
                 <button className='p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' onClick={(e)=>addNote(complaint.ID)}>Add a note</button>
+                <button className='p-3 ml-5 mt-[32px] bg-[#D70000] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#D70000] text-slate-100 hover:text-[#D70000]' onClick={(e)=>addMeeting(complaint.ID)}>Schedule a Meeting</button>
                 {selectedComplaintID && <AddNote complaintID={selectedComplaintID} onClose={closeNote} />}
             </div>
         </div>

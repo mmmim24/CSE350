@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import Error from './components/Error'
 import Profile from './components/Profile'
 import Map from './components/Map'
+import Meeting from './components/Meeting'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
          {/* multi-step form */}
         <Route path="/complaintform" element={<ComplaintForm />} />  
         <Route path="/complaint/:id" element={<ComplaintDetails />} />
+        <Route path="/complaint/:id/meeting" element={<Meeting />} />
         <Route path="/about" element={<Map />} />
         <Route path="*" element={<Error/>} />
       </Routes>
