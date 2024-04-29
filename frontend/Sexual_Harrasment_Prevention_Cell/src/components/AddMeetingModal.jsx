@@ -15,21 +15,25 @@ const AddMeetingModal = ({isOpen,onClose,onAdd}) => {
 
   return (
     <React.Fragment>
-        <Modal isOpen={isOpen} onRequestClose={onClose} >
-            <form onSubmit={onSubmit}>
-                <label>Event</label>
-                <input className='ml-5 p-3 hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' placeholder='Event Name' value={title}  onChange={e=> setTitle(e.target.value)} />
-                <div>
-                    <label>Start Date</label>
-                    <Datetime value={strat} onChange={e=>setStrat(e)} />
+        <main className='mx-auto'>
+            <Modal isOpen={isOpen} onRequestClose={onClose} >
+                <div className='mx-[40%]'>
+                    <form onSubmit={onSubmit}>
+                        <label className='font-bold'>Meeting</label>
+                        <input className='ml-5 p-3 border-[3px] hover:bg-[#FAFFF3] rounded-lg hover:border-[3px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' placeholder='Meeting Name' value={title}  onChange={e=> setTitle(e.target.value)} />
+                        <div className='my-[32px]'>
+                            <label>Start Date</label>
+                            <Datetime className='cursor-pointer' value={strat} onChange={e=>setStrat(e)} />
+                        </div>
+                        <div className='my-[32px]'>
+                            <label>End Date</label>
+                            <Datetime className='cursor-pointer' value={end} onChange={e=>setEnd(e)} />
+                        </div>
+                        <button className='p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' type='submit'>Add Meeting</button>
+                    </form>
                 </div>
-                <div>
-                    <label>End Date</label>
-                    <Datetime value={end} onChange={e=>setEnd(e)} />
-                </div>
-                <button className='p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' type='submit'>Add Meeting</button>
-            </form>
-        </Modal>
+            </Modal>
+        </main>
     </React.Fragment>
   )
 }
