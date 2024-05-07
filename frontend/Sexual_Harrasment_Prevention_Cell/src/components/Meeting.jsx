@@ -39,13 +39,20 @@ const Meeting = () => {
             <div style={{position:"relative",zIndex:0}}>
                 <FullCalendar
                     ref={reff}
-                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                    plugins={[dayGridPlugin,interactionPlugin, timeGridPlugin,]}
                     initialView="dayGridMonth"
                     headerToolbar={{
                         start: 'prev,next today',
                         center: 'title',
                         end: 'dayGridMonth,timeGridWeek,timeGridDay'
                     }}
+                    contentHeight={500}
+                    expandRows={true}
+                    eventColor='#009900'
+                    events={[
+                        { title: 'Meeting 1', date: '2024-05-29' },
+                        { title: 'Meeting 2', date: '2024-05-19' }
+                    ]}
                 />
             </div>
             <AddMeetingModal isOpen={modalOpen} onClose={()=>setModalOpen(false)} onAdd={e=>onAdd(e)}/>
@@ -53,5 +60,4 @@ const Meeting = () => {
     </React.Fragment>
   )
 }
-
 export default Meeting
