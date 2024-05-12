@@ -34,7 +34,7 @@ const Meeting = () => {
     };
   return (
     <React.Fragment>
-        <button className='p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' onClick={()=>setModalOpen(true)}>Add Meeting</button>
+        <button className='btn-green' onClick={()=>setModalOpen(true)}>Add Meeting</button>
         <main className='min-h-[50vh] my-[32px] grid justify-center'>
             <div style={{position:"relative",zIndex:0}}>
                 <FullCalendar

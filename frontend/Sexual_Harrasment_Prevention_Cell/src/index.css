@@ -50,25 +50,25 @@ h1 {
   line-height: 1.1;
 }
 
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.primary-btn{
+  @apply bg-[#136F63] hover:bg-[#FAFFF3] hover:border-[#136F63] text-slate-100 hover:text-[#136F63] rounded-lg hover:border-[1px];
 }
-button:hover {
-  border-color: #136F63;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
 
+.secondary-btn{
+  @apply bg-[#D70000] hover:bg-[#FAFFF3] hover:border-[#D70000] text-white hover:text-[#D70000] rounded-lg hover:border-[1px];
+}
+
+.btn-green{
+  @apply p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63];
+}
+
+.brief-btn-red{
+  @apply secondary-btn p-3  hover:border-[1px]  hover:p-[11px]  mr-[32px];
+}
+
+.brief-btn-green{
+  @apply primary-btn p-3 hover:border-[1px] ;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

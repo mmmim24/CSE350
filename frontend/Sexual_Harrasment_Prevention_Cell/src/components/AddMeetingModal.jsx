@@ -29,7 +29,7 @@ const AddMeetingModal = ({isOpen,onClose,onAdd}) => {
                             <label>End Date</label>
                             <Datetime className='cursor-pointer' value={end} onChange={e=>setEnd(e)} />
                         </div>
-                        <button className='p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63]' type='submit'>Add Meeting</button>
+                        <button className='btn-green' type='submit'>Add Meeting</button>
                     </form>
                 </div>
             </Modal>

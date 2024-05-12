@@ -27,10 +27,10 @@ const Brief = () => {
               <p className='my-[32px]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia magnam dolorum omnis autem. Saepe veritatis autem, minus ea totam quae. Dolore maiores modi dicta ipsam? Nam earum ea quibusdam soluta ipsa ab, vitae repellendus explicabo, corrupti sunt, aut sequi tempora nulla magni ullam fuga provident ducimus. Fugit optio est quas temporibus incidunt, perferendis commodi. Iusto, fugit. Minima quaerat inventore nihil aliquid aperiam qui totam officia, perferendis dolore, recusandae reprehenderit, excepturi modi. At quaerat sapiente odit impedit eos! Atque labore quod recusandae blanditiis rem soluta dolorum corrupti dolore dicta sapiente dolorem ea aut, quis illo porro dignissimos laudantium placeat sit itaque!</p>
               {
                 (user.role==='admin')
-                ?<Link to='/dashboard' className='p-3 bg-[#D70000] text-white rounded-lg hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#D70000] hover:p-[11px] hover:text-[#D70000] mr-[32px]'>View Complaints</Link>
+                ?<Link to='/dashboard' className='brief-btn-red'>View Complaints</Link>
                 :<>
-                <Link to='/dashboard' className='p-3 bg-[#D70000] text-white rounded-lg hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#D70000] hover:p-[11px] hover:text-[#D70000] mr-[32px]'>File A Complaint</Link>
-                <Link to='/dashboard' className='p-3 bg-[#136F63] text-white rounded-lg hover:bg-[#FAFFF3] hover:border-[1px] hover:border-[#136F63] hover:text-[#136F63]'>Check Status</Link>
+                <Link to='/dashboard' className='brief-btn-red'>File A Complaint</Link>
+                <Link to='/dashboard' className='brief-btn-green'>Check Status</Link>
                 </>
               }
             </div>
