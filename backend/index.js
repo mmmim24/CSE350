@@ -7,7 +7,7 @@ const userRoute = require('./routes/userRoute');
 const complaintRoute = require('./routes/complaintRoute');
 
 const PORT = process.env.PORT || 3333
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/shpc'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/shppc'
 
 const app = express()
 
@@ -24,7 +24,7 @@ app.use(session({
     saveUninitialized: false,
     cookie:{
         secure: false,
-        maxAge: 3000*24*60*60
+        maxAge: 60000
     }
 }))
 
@@ -46,5 +46,5 @@ app.use('/user', userRoute);
 app.use('/complaint', complaintRoute);
 
 app.listen(PORT, ()=>{
-    console.log("server is running...");
+    console.log(`server is running on ${PORT}...`);
 })
