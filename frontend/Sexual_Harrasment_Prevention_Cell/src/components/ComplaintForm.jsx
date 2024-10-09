@@ -1,9 +1,9 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Stepper from "./Stepper";
 import StepperControl from "./StepperControl";
 import { UseContextProvider } from "../contexts/StepperContext";
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Info from "./steps/Info";
 import Accused from "./steps/Accused";
@@ -12,7 +12,7 @@ import Final from "./steps/Final";
 
 function ComplaintForm() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [user,setUser] = useState({});
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
   const steps = [
     "Personal Information",
@@ -20,18 +20,18 @@ function ComplaintForm() {
     "Details of the Incident",
     "Submit Complaint",
   ];
-  useEffect(()=>{
-    axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
-        .then(res=>{
-            if(res.data.valid===true){
-                setUser(res.data);
-            }
-            else{
-                navigate('/');
-            }
-        })
-        .catch(err=>console.log(err));
-  },[]);
+  useEffect(() => {
+    axios.post('http://localhost:3333/user/dashboard')
+      .then(res => {
+        if (res.data.valid === true) {
+          setUser(res.data);
+        }
+        else {
+          navigate('/');
+        }
+      })
+      .catch(err => console.log(err));
+  }, []);
   const displayStep = (step) => {
     switch (step) {
       case 1:
@@ -58,7 +58,7 @@ function ComplaintForm() {
     <div className="min-h-[70vh] my-[32px] py-[96px] mx-auto md:w-1/2">
       {/* Stepper */}
       <div className="horizontal container border-2 border-[#136F63] rounded-2xl p-5 shadow-xl min-h-[200px]">
-        <Stepper steps={steps} currentStep={currentStep}   />
+        <Stepper steps={steps} currentStep={currentStep} />
 
         <div className="p-[64px]">
           <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>

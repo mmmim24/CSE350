@@ -1,39 +1,46 @@
 import React from 'react'
 import axios from 'axios';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DropMenu from './DropMenu';
 
 const NavBar = () => {
-    const [user,setUser] = React.useState({});
+    const [user, setUser] = React.useState({});
     const navigate = useNavigate();
-    React.useEffect(()=>{
-        axios.post('https://cse350-backend-production.up.railway.app/user/dashboard')
-            .then(res=>{
-                if(res.data.valid===true){
+    React.useEffect(() => {
+        axios.post('http://localhost:3333/user/dashboard')
+            .then(res => {
+                if (res.data.valid === true) {
                     setUser(res.data);
                     console.log('Welcome to Dashboard');
                 }
-                else{
+                else {
                     console.log('You are not logged in');
                     navigate('/');
                 }
             })
-            .catch(err=>console.log(err));
-    },[]);
+            .catch(err => console.log(err));
+    }, []);
     return (
         <React.Fragment>
-            <ul className='flex lg:gap-4 sm:gap-1 md:gap-2 pl-[10%] place-items-center '>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px] rounded-lg' to='/'>Home</Link></li>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px] rounded-lg' to='/faq'>FAQ</Link></li>
-                <li><Link className='lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg text-black hover:text-[#136F63] hover:border-[1px] hover:border-[#136F63] sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px] rounded-lg' to='/about'>About</Link></li>
+            <ul className="flex gap-2 justify-between sm:gap-1 md:gap-2 lg:gap-4">
                 <li>
-                    {
-                        user.valid
-                        ? <DropMenu user={user}/>
-                        : <Link className='bg-[#D70000] text-white hover:text-[#D70000] hover:border-red-[#D70000] mr-[32px] lg:p-3 sm:p-1 md:p-2 lg:text-xl sm:text-sm md:text-lg hover:bg-[#FAFFF3] sm:hover:p-1 md:hover:p-2 lg:hover:p-3 border-[1px] border-[#D70000] rounded-lg' to='/login'>Login </Link>
-                    }
+                    <Link className="p-1 text-sm text-black rounded-lg hover:text-[#136F63] hover:border hover:border-[#136F63] sm:p-1 md:p-2 lg:p-3 sm:text-sm md:text-lg lg:text-xl sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px]" to="/">Home</Link>
+                </li>
+                <li>
+                    <Link className="p-1 text-sm text-black rounded-lg hover:text-[#136F63] hover:border hover:border-[#136F63] sm:p-1 md:p-2 lg:p-3 sm:text-sm md:text-lg lg:text-xl sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px]" to="/faq">FAQ</Link>
+                </li>
+                <li>
+                    <Link className="p-1 text-sm text-black rounded-lg hover:text-[#136F63] hover:border hover:border-[#136F63] sm:p-1 md:p-2 lg:p-3 sm:text-sm md:text-lg lg:text-xl sm:hover:p-1 md:hover:p-2 lg:hover:p-[11px]" to="/about">About</Link>
+                </li>
+                <li>
+                    {user.valid ? (
+                        <DropMenu user={user} />
+                    ) : (
+                        <Link className="p-1 text-sm bg-[#D70000] text-white rounded-lg hover:text-[#D70000] hover:bg-[#FAFFF3] hover:border hover:border-[#D70000] sm:p-1 md:p-2 lg:p-3 sm:text-sm md:text-lg lg:text-xl sm:hover:p-1 md:hover:p-2 lg:hover:p-3" to="/login">Login</Link>
+                    )}
                 </li>
             </ul>
+
         </React.Fragment>
     )
 }

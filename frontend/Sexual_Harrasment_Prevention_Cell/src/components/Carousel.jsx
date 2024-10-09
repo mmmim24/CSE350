@@ -25,8 +25,8 @@ const Carousel = () => {
 
     return (
         <React.Fragment>
-            <div className="w-[780px] mt-[64px] justify-center items-center overflow-hidden relative my-[32px]">
-                <div className='flex transition-transform ease-in duration-1000 ' style={{transform:`translateX(-${currentImage*100}%)`}}>
+            <div className="w-full mt-8 my-8 relative overflow-hidden sm:w-[640px] md:w-[780px]">
+                <div className="flex transition-transform ease-in duration-1000" style={{ transform: `translateX(-${currentImage * 100}%)` }}>
                     {images.map((image, index) => (
                         <img
                             key={index}
@@ -36,16 +36,16 @@ const Carousel = () => {
                         />
                     ))}
                 </div>
-                <div className='absolute inset-0 flex items-center justify-between p-4'>
+                <div className="absolute inset-0 flex items-center justify-between p-2 sm:p-4">
                     <button
                         onClick={previousImage}
-                        className='p-1 rounded-full shadow bg-white/50 text-gray-500 hover:bg-white'
+                        className="p-1 rounded-full shadow bg-white/50 text-gray-500 hover:bg-white"
                     >
                         ❮
                     </button>
                     <button
                         onClick={nextImage}
-                        className='p-1 rounded-full shadow bg-white/50 text-gray-500 hover:bg-white'
+                        className="p-1 rounded-full shadow bg-white/50 text-gray-500 hover:bg-white"
                     >
                         ❯
                     </button>

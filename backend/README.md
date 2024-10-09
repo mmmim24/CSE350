@@ -1,6 +1,6 @@
 # Sexual Harrasment Prevention & Protection Cell
   
-This is the backend repository of our CSE-350 project . The backend api is hosted in [railway](https://railway.app/) . If you hit the [home](https://cse350-backend-production.up.railway.app/) route it will show a message `SHPPC API` from GET request.
+This is the backend repository of our CSE-350 project . The backend api is hosted in [railway](https://railway.app/) . If you hit the [home](http://localhost:3333/) route it will show a message `SHPPC API` from GET request.
 
 >### Instituition 
 >##### [Shahjalal University of Science & Technology](https://sust.edu)  

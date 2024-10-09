@@ -25,9 +25,12 @@
   padding: 2px 4px;
 }
 
-.fc .fc-col-header-cell-cushion { /* needs to be same precedence */
-  padding-top: 5px; /* an override! */
-  padding-bottom: 5px; /* an override! */
+.fc .fc-col-header-cell-cushion {
+  /* needs to be same precedence */
+  padding-top: 5px;
+  /* an override! */
+  padding-bottom: 5px;
+  /* an override! */
 }
 
 a {
@@ -35,6 +38,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -50,24 +54,28 @@ h1 {
   line-height: 1.1;
 }
 
-.primary-btn{
+.primary-btn {
   @apply bg-[#136F63] hover:bg-[#FAFFF3] hover:border-[#136F63] text-slate-100 hover:text-[#136F63] rounded-lg hover:border-[1px];
 }
 
-.secondary-btn{
+.secondary-btn {
   @apply bg-[#D70000] hover:bg-[#FAFFF3] hover:border-[#D70000] text-white hover:text-[#D70000] rounded-lg hover:border-[1px];
 }
 
-.btn-green{
+.btn-green {
   @apply p-3 mt-[32px] bg-[#136F63] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#136F63] text-slate-100 hover:text-[#136F63];
 }
 
-.brief-btn-red{
-  @apply secondary-btn p-3  hover:border-[1px]  hover:p-[11px]  mr-[32px];
+.btn-red {
+  @apply p-3 mt-[32px] bg-[#D70000] hover:bg-[#FAFFF3] rounded-lg hover:border-[1px] hover:p-[11px] hover:border-[#D70000] text-slate-100 hover:text-[#D70000];
 }
 
-.brief-btn-green{
-  @apply primary-btn p-3 hover:border-[1px] ;
+.brief-btn-red {
+  @apply secondary-btn p-3 hover:border-[1px] hover:p-[11px] mr-[32px];
+}
+
+.brief-btn-green {
+  @apply primary-btn p-3 hover:border-[1px];
 }
 
 @media (prefers-color-scheme: light) {
@@ -75,9 +83,11 @@ h1 {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
