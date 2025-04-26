@@ -4,22 +4,32 @@ This is the main repository of our CSE-350 project. It has both the frontend and
   
 The backend directory in this folder is maintained for future dockerization purposes. And we have a separate backend repository [CSE350-backend](https://github.com/mmmim24/cse350-backend) deployed in [Railway](https://railway.app).
 
-![Homepage](readme-images/student-homepage.jpeg)
 
 ## About The Project
 
 This project implements a Sexual Harassment Prevention & Protection Cell web application for Shahjalal University of Science & Technology. The platform allows students to submit complaints confidentially, and administrators to manage and track these complaints through resolution.
 
+### Student Homepage
+![Student](readme-images/student-homepage.jpeg)
+
+### Admin Homepage
+![Admin](readme-images/admin-homepage.jpeg)
+
 ### Key Features
 
 - **Complaint Submission**: Students can submit detailed complaints through a multi-step form
-- **Tracking System**: Users can track their complaint status using a unique ID
-- **Admin Dashboard**: Administrators can view, filter, and manage all submitted complaints
-- **Meeting Scheduling**: Admins can schedule meetings related to complaints
-- **Note Management**: Admins can add notes and update the status of complaints
-- **Password Management**: Users can change their passwords securely
+    ![Complaint Form](readme-images/complaint-submit.jpeg)
 
-![Dashboard](readme-images/student-dashboard.jpeg)
+- **Tracking System**: Users can track their complaint status using a unique ID
+    ![Student Dashboard](readme-images/student-dashboard.jpeg)
+- **Admin Dashboard**: Administrators can view, filter, and manage all submitted complaints
+    ![Admin Dashboard](readme-images/all-complaints.jpeg)
+  
+- **Meeting Scheduling**: Admins can schedule meetings related to complaints
+    ![Complaint Details](readme-images/complaint-details.jpeg)
+- **Note Management**: Admins can add notes and update the status of complaints
+    ![Add Notes](readme-images/update-status.jpeg)
+- **Password Management**: Users can change their passwords securely
 
 ### Tech Stack
 
@@ -39,8 +49,6 @@ View our UI/UX design on Figma:
 
 - `/frontend`: Contains the React.js frontend application
 - `/backend`: Contains the Express.js backend API
-
-![Complaint Form](readme-images/complaint-submit.jpeg)
 
 >### Institution 
 >##### [Shahjalal University of Science & Technology](https://sust.edu)  
@@ -83,8 +91,6 @@ Clone this repository using `git clone https://github.com/mmmim24/CSE350.git`.
    npm run shppc
    ```
 
-![Admin View](readme-images/admin-homepage.jpeg)
-
 ### Backend Setup
 
 While the production backend is hosted on Railway, you can set up the backend locally:
@@ -111,8 +117,6 @@ While the production backend is hosted on Railway, you can set up the backend lo
    npm start
    ```
 
-![Meeting Calendar](readme-images/meeting-calendar.png)
-
 ## Login Credentials
 
 For testing purposes, you can use the following credentials:
@@ -125,8 +129,6 @@ For testing purposes, you can use the following credentials:
   - Email: `mustaqmujahidmim@gmail.com`
   - Password: `2019331024`
 
-![Login Screen](readme-images/login.png)
-
 ## API Endpoints
 
 The backend provides the following main API endpoints:
@@ -134,14 +136,11 @@ The backend provides the following main API endpoints:
 - `/user` - User authentication and management
 - `/complaint` - Complaint submission and management
 
-![Complaint Details](readme-images/complaint-details.png)
-
 ## Deployment
 
 - Frontend was deployed on [Vercel](https://shppc-sust.vercel.app/)
 - Backend was deployed on [Railway](https://cse350-backend-production.up.railway.app/)
 
-![Committee Members](readme-images/committee.png)
 
 ## License
 
